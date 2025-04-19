@@ -6,7 +6,11 @@ import java.sql.Statement;
 public class EmployeeDB {
     public static void main(String[] args) {
         try {
+<<<<<<< HEAD
             Class.forName("com.mysql.cj.jdbc.Driver");
+=======
+            Class.forName("com.mysql.jdbc.Driver");
+>>>>>>> bcc31edbaac87d3722b772c6fdde4df181d36717
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/practical_18", "root", "");
             Statement s = con.createStatement();
             s.execute("create table employee ( emp_id varchar(10),emp_name varchar(20),emp_address varchar(30) )"); // create a table

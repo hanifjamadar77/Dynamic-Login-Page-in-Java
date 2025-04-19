@@ -120,6 +120,7 @@ public class Sign_In_Page {
 
         acc.addActionListener(new AbstractAction() {
 
+<<<<<<< HEAD
             
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,6 +130,15 @@ public class Sign_In_Page {
                 String contry = ccontry.getSelectedItem().toString();
                 String userPassword = new String(jpass.getPassword());
 
+=======
+            String user = tuser.getText();
+            String email = temail.getText();
+            String pass = new String(jpass.getPassword());
+            String contry = ccontry.getName();
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String userPassword = new String(jpass.getPassword());
+>>>>>>> bcc31edbaac87d3722b772c6fdde4df181d36717
                 if ((userPassword.length() >= 8)) {
                     JOptionPane.showMessageDialog(f, "Please Keep Your Password Less Then 8 Charactors", "Alert", JOptionPane.WARNING_MESSAGE);
                 } else if (userPassword.equals("")) {
@@ -146,10 +156,17 @@ public class Sign_In_Page {
                 }
 
                 try {
+<<<<<<< HEAD
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3307/myloginpage", "root", "");
 
                    String query = "INSERT INTO userlogin values('"+user +"','"+email +"','"+pass +"','"+ contry +"')";
+=======
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/myloginpage", "root", "");
+
+                   String query = "INSERT INFO userlogin values('"+user +"','"+email +"','"+pass +"','"+ contry +"')";
+>>>>>>> bcc31edbaac87d3722b772c6fdde4df181d36717
                    Statement sta = con.createStatement();
                    int x = sta.executeUpdate(query);
                    if (x==0){
